@@ -31,16 +31,16 @@ class Worktime:
     
     def get_hours_shift(self,shift:list)->list:
 
-        print(shift)
+        #print(shift)
         hours = self.work_schedule.split('-')
-        print('hours',hours)
+        #print('hours',hours)
         start_hour=datetime.strptime(hours[0],'%H:%M')
         finish_hour=datetime.strptime(hours[1],'%H:%M')  
                   
         if shift[0] != shift[1]:            
             finish_time_starting_shift = shift_hours[shift[0]][1] #finish time      
 
-            print('finish_time_starting_shift',finish_time_starting_shift)
+            #print('finish_time_starting_shift',finish_time_starting_shift)
             finish_hour_starting_shift=datetime.strptime(finish_time_starting_shift,'%H:%M')            
 
             starting_shift_time = finish_hour_starting_shift.hour - start_hour.hour
