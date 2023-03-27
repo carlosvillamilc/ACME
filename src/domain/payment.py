@@ -1,9 +1,11 @@
-from src.data.workhours import weekday_shift_hour_costs,weekend_shift_hour_costs
+from src.data.workhours import (weekday_shift_hour_costs,
+                                weekend_shift_hour_costs)
 from src.domain.worktime import Worktime
+
 
 class Payment(Worktime):
 
-    def __init__(self,work_day:str,work_schedule:str):
+    def __init__(self, work_day: str, work_schedule: str):
 
         Worktime.__init__(self, work_day, work_schedule)
         self.payment = 0
@@ -13,15 +15,14 @@ class Payment(Worktime):
         week_day_type = self.get_day_type()
         shifts = self.get_shift()
         hours = self.get_hours_shift(shifts)
-        
-        #print(week_day_type,hours,shifts)        
+
         if week_day_type == 1:
-            for index in range(len(hours)):                                        
-                cost_per_hour= weekday_shift_hour_costs[shifts[index]]                    
+            for index in range(len(hours)):
+                cost_per_hour = weekday_shift_hour_costs[shifts[index]]
                 self.payment += hours[index] * cost_per_hour
         else:
-            for index in range(len(hours)):                               
-                cost_per_hour= weekend_shift_hour_costs[shifts[index]]                    
-                self.payment += hours[index] * cost_per_hour            
-        
+            for index in range(len(hours)):
+                cost_per_hour = weekend_shift_hour_costs[shifts[index]]
+                self.payment += hours[index] * cost_per_hour
+
         return self.payment

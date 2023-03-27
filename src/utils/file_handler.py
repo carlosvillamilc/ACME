@@ -1,7 +1,7 @@
 import os
 
 
-def load_data(path:str) -> str:
+def load_data(path: str) -> str:
     try:
         with open(path, "r") as file:
             content = file.read()
@@ -9,7 +9,8 @@ def load_data(path:str) -> str:
     except FileNotFoundError:
         print('File not Found')
 
-def write_data(path:str ,payment_info:str) -> int:
+
+def write_data(path: str, payment_info: str) -> int:
     try:
         with open(path, "a+") as file:
             return file.write(payment_info)
@@ -17,13 +18,13 @@ def write_data(path:str ,payment_info:str) -> int:
         print('File not Found')
 
 
-def input_handler(dir_name:str) -> list:    
+def input_handler(dir_name: str) -> list:
     file_path = os.path.join(dir_name, "employees.txt")
     data = load_data(file_path)
-    if data != None:
+    if data is None:
         return data.split('\n')
 
 
-def output_handler(payment_info:str, dir_name:str) -> int:    
+def output_handler(payment_info: str, dir_name: str) -> int:
     file_path = os.path.join(dir_name, "payment.txt")
-    return write_data(file_path,payment_info)
+    return write_data(file_path, payment_info)
