@@ -32,6 +32,6 @@ jobs:
         working-directory: .
         run: pytest --cov=src -v -s --cov-fail-under=80
       - name: Lint with flake8
-      run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 src --count  --show-source --statistics
+        run: |
+          # stop the build if there are Python syntax errors or undefined names
+          flake8 src --count  --show-source --statistics
