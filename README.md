@@ -2,13 +2,15 @@
 
 ### This Python application calculates the amount of money that an employee should be paid based on the hours they worked and the times during which they worked. The company ACME offers their employees the flexibility to work the hours they want. They will pay for the hours worked based on the day of the week and time of day, according to the following table:
 
-Day of Week	Time	Pay Rate
-Monday - Friday	00:01 - 09:00	25 USD
-Monday - Friday	09:01 - 18:00	15 USD
-Monday - Friday	18:01 - 00:00	20 USD
-Saturday - Sunday	00:01 - 09:00	30 USD
-Saturday - Sunday	09:01 - 18:00	20 USD
-Saturday - Sunday	18:01 - 00:00	25 USD
+| Day of Week | Time | Pay Rate |
+| --- | --- | --- |
+| Monday - Friday | 00:01 - 09:00 | 25 USD |
+| Monday - Friday | 09:01 - 18:00 | 15 USD |
+| Monday - Friday | 18:01 - 00:00 | 20 USD |
+| Saturday - Sunday | 00:01 - 09:00 | 30 USD |
+| Saturday - Sunday | 09:01 - 18:00 | 20 USD |
+| Saturday - Sunday | 18:01 - 00:00 | 25 USD |
+
 How to use
 To use this application, create a .txt file containing at least five sets of data. Each set of data should include the name of an employee and the schedule they worked, indicating the time and hours. Use the following format:
 
