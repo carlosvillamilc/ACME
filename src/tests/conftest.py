@@ -2,6 +2,7 @@ import pytest
 import os
 
 from src.domain.worktime import Worktime
+from src.domain.payment import Payment
 
 @pytest.fixture
 def path():
@@ -33,3 +34,11 @@ def worktime_weekend_ten_twelve():
 @pytest.fixture
 def worktime_weekend_seven_twelve():
       return Worktime('SU','07:00-12:00')
+
+@pytest.fixture
+def payment_weekday_ten_twelve():
+      return Payment('MO','10:00-12:00')
+
+@pytest.fixture
+def payment_weekend_ten_twelve():
+      return Payment('SU','10:00-12:00')
