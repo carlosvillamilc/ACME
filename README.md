@@ -38,16 +38,23 @@ ASTRID=MO10:00-12:00,TH12:00-14:00,SU20:00-21:00
 
 Once you have created your input file, run the application with the following command:
 
+```
+python3 employee_payment_calculator.py <input_file_directory>
+```
 
-python employee_payment_calculator.py <input_file_path>
+Where <input_file_directory> is the directory to your input file, the name of the file must be employees.txt
 
-Where <input_file_path> is the path to your input file.
-
-The application will calculate the amount of money that each employee should be paid and write it into a file in the following format:
+The application will calculate the amount of money that each employee should be paid and write it into a file in the following format in the same folder:
 
 <employee_name> is: <amount> USD
 
 Dependencies
-This application does not require any external libraries to run. However, you need to create a virtualenvironment for installing pytest and pytest-cov for running the tests. 
+This application does not require any external libraries to run. However, you need to create a virtualenvironment for installing pytest and pytest-cov for running the tests and flake8 as linter. 
 
 Architecture and Approach
+
+The solution was desgined using OOP programming and n-layer pattern, where you abstract the business logic from the data and other handlers. Also design the classes applying some SOLID patterns principles such as Single Responsability.
+
+The basic idea was to iterate in every chunck of data (shift) in order to check with the base data the amount of hours that the employee work and how much that amount of time was the cost and the sum all the values to get a final value.
+
+Was added also testing for every file/class created to certify code quality and linter code quality.
