@@ -1,6 +1,7 @@
 import pytest
 import os
 
+from src.domain.worktime import Worktime
 
 @pytest.fixture
 def path():
@@ -20,3 +21,15 @@ def file_created(path):
 @pytest.fixture
 def correct_employee_input():      
       return 'RENE=MO10:00-12:00,TU10:00-12:00'
+
+@pytest.fixture
+def worktime_weekday_ten_twelve():
+      return Worktime('MO','10:00-12:00')
+
+@pytest.fixture
+def worktime_weekend_ten_twelve():
+      return Worktime('SU','10:00-12:00')
+
+@pytest.fixture
+def worktime_weekend_seven_twelve():
+      return Worktime('SU','07:00-12:00')
