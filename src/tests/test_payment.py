@@ -1,9 +1,5 @@
 import os
 import pytest
-from src.utils.file_handler import (load_data, 
-                                    write_data,
-                                    input_handler,
-                                    output_handler)
 
 class TestPayment:
 

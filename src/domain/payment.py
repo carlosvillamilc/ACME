@@ -16,8 +16,7 @@ class Payment(Worktime):
         
         print(week_day_type,hours,shifts)        
         if week_day_type == 1:
-            for index in range(len(hours)):
-                print('index',index)                               
+            for index in range(len(hours)):                                        
                 cost_per_hour= weekday_shift_hour_costs[shifts[index]]                    
                 self.payment += hours[index] * cost_per_hour
         else:
