@@ -21,7 +21,7 @@ def write_data(path: str, payment_info: str) -> int:
 def input_handler(dir_name: str) -> list:
     file_path = os.path.join(dir_name, "employees.txt")
     data = load_data(file_path)
-    if data is None:
+    if data is not None:
         return data.split('\n')
 
 
