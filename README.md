@@ -20,6 +20,7 @@ To use this application, create a .txt file containing at least five sets of dat
 Where:
 
 <employee_name> is the name of the employee (string)
+
 <day_of_week> is the day of the week, represented by the following abbreviations:
 MO: Monday
 TU: Tuesday
@@ -28,7 +29,9 @@ TH: Thursday
 FR: Friday
 SA: Saturday
 SU: Sunday
+
 <start_time> is the start time in 24-hour format (hh:mm)
+
 <end_time> is the end time in 24-hour format (hh:mm)
 
 For example:
@@ -36,10 +39,13 @@ For example:
 RENE=MO10:00-12:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00-21:00
 ASTRID=MO10:00-12:00,TH12:00-14:00,SU20:00-21:00
 
-Once you have created your input file, run the application with the following command:
-
+Once you have created your input file, follow the nexts steps:
+1. Create virtual environment ```python3 -m venv venv ```
+2. Activate virtual environment ```source venv/bin/activate```
+3. Install dependencies (testing and linter) ```pip install -r requirements.txt```
+4. Run the application with the following command:
 ```
-python3 employee_payment_calculator.py <input_file_directory>
+python3 main.py <input_file_directory>
 ```
 
 Where <input_file_directory> is the directory to your input file, the name of the file must be employees.txt
@@ -58,3 +64,9 @@ The solution was desgined using OOP programming and n-layer pattern, where you a
 The basic idea was to iterate in every chunck of data (shift) in order to check with the base data the amount of hours that the employee work and how much that amount of time was the cost and the sum all the values to get a final value.
 
 Was added also testing for every file/class created to certify code quality and linter code quality.
+
+Considerations:
+- Technical:
+  Solution was designed with python 3.10 so is better to use in that version
+- Business:
+  The maximum amount of time that an employee can work is les than two shifts.
