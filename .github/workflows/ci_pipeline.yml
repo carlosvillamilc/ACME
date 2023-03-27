@@ -1,0 +1,33 @@
+# CI Pipeline para correr las pruebas de los servicios
+name: Pruebas y cobertura
+
+# Controls when the action will run. 
+on:
+  push:
+    branches: ['develop','master']
+  pull_request:
+    branches: ['develop','master']
+
+# Workflow pruebas
+jobs:
+  job1:
+    name: Pruebas
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ 3.10 ]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Create virtual environment
+        working-directory: .
+        run: python3 -m venv venv
+      - name: Activate virtual environment
+        working-directory: .
+        run: source venv/bin/activate
+      - name: Install dependencies
+        working-directory: .
+        run: pip install -r requirements.txt
+      - name: Run unit tests
+        working-directory: .
+        run: pytest --cov=src -v -s --cov-fail-under=80
